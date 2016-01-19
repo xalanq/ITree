@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogInsertCode</class>
+ <widget class="QDialog" name="DialogInsertCode">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Insert code</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutUp">
+     <item>
+      <widget class="QLineEdit" name="lineEditTitle">
+       <property name="placeholderText">
+        <string>title</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxFold">
+       <property name="text">
+        <string>&amp;Fold</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxLines">
+       <property name="text">
+        <string>&amp;Lines</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="textEdit"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutDown">
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <property name="currentIndex">
+        <number>17</number>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QComboBox::AdjustToContents</enum>
+       </property>
+       <item>
+        <property name="text">
+         <string>applescript</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>actionscript3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>bash</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>coldfusion</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>cpp</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>c#</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>css</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>delphi</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>diff</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>erlang</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>groovy</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>java</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>javafx</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>javascript</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>perl</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>php</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>plain</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>python</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ruby</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>sass</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>scala</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>sql</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>vb</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>xml</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelHint">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string notr="true">Ctrl+Enter</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonOpen">
+       <property name="text">
+        <string>&amp;Open</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEditTitle</tabstop>
+  <tabstop>checkBoxFold</tabstop>
+  <tabstop>checkBoxLines</tabstop>
+  <tabstop>textEdit</tabstop>
+  <tabstop>comboBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
