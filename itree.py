@@ -235,10 +235,12 @@ class MainWindow(QMainWindow):
 		if self.mainWidget.isEditView:
 			dialog = DialogInsertFile(self.resRoot, self.resCurrentPath)
 			if dialog.exec_() == QDialog.Accepted:
+				self.resCurrentPath = dialog.path.text()
 				name = dialog.listView.getSelectedPath()
 				infoDialog = DialogInsertLink()
 				infoDialog.toolButton.hide()
 				infoDialog.lineEditLink.setText(name)
+				infoDialog.lineEditText.setText(os.path.basename(name))
 				infoDialog.lineEditText.setFocus()
 				if infoDialog.exec_() == QDialog.Accepted:
 					title = infoDialog.lineEditTitle.text()

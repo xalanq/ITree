@@ -308,7 +308,8 @@ class DialogInsertFile(QDialog):
 
 	def keyPressEvent(self, event):
 		if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:
-			if self.listView.getSelectedNode().isFile():
+			node = self.listView.getSelectedNode()
+			if node and node.isFile():
 				self.accept()
 			else:
 				self.listView.actionEnter()
