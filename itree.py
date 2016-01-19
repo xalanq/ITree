@@ -235,7 +235,6 @@ class MainWindow(QMainWindow):
 		if self.mainWidget.isEditView:
 			dialog = DialogInsertFile(self.resRoot, self.resCurrentPath)
 			if dialog.exec_() == QDialog.Accepted:
-				self.resCurrentPath = dialog.path.text()
 				name = dialog.listView.getSelectedPath()
 				infoDialog = DialogInsertLink()
 				infoDialog.toolButton.hide()
@@ -248,6 +247,7 @@ class MainWindow(QMainWindow):
 						title = ' "' + title + '"'
 					self.mainWidget.editView.insertPlainText('[{}](ifile:{}{})'.format(infoDialog.lineEditText.text(), infoDialog.lineEditLink.text(), title))
 
+			self.resCurrentPath = dialog.path.text()
 			if dialog.listView.isModified:
 				self.isResModified = True
 				self.updateModified()
@@ -325,7 +325,6 @@ class MainWindow(QMainWindow):
 		self.currentFileName = name
 		self.mainWidget.setModified(False)
 		self.isResModified = False
-		self.resCurrentPath = '/'
 		self.setWindowModified(False)
 		if name:
 			basename = os.path.basename(name)
@@ -343,6 +342,7 @@ class MainWindow(QMainWindow):
 				self.mainWidget.setRoot(x)
 				self.mainWidget.setResRoot(y)
 				self.resRoot = y
+				self.resCurrentPath = '/'
 				self.setCurrentName(filename)
 				self.actionRedo.setEnabled(False)
 				self.actionUndo.setEnabled(False)
