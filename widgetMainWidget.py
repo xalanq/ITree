@@ -44,12 +44,12 @@ class UndoCommand(QUndoCommand):
 				self.main.editView.document().undoCommandAdded.connect(self.main.commandEditChanged)
 		elif self.flag == 3:
 			if self.data:
-				self.main.treeView.indexChanged.disconnect(self.main.indexChanged)
+				# self.main.treeView.indexChanged.disconnect(self.main.indexChanged)
 				node, row, parent = self.data
 				if len(self.main.model.root) == 0:
 					self.main.editView.setReadOnly(False)
 				self.main.model.insert(node, row, parent)
-				self.main.treeView.indexChanged.connect(self.main.indexChanged)
+				# self.main.treeView.indexChanged.connect(self.main.indexChanged)
 		elif self.flag == 4:
 			if len(self.data) == 2:
 				self.main.treeView.indexChanged.disconnect(self.main.indexChanged)
@@ -70,7 +70,8 @@ class UndoCommand(QUndoCommand):
 				self.main.treeView.indexChanged.disconnect(self.main.indexChanged)
 				self.main.editView.document().undoCommandAdded.disconnect(self.main.commandEditChanged)
 				previous, current, _ = self.data
-				self.main.treeView.setCurrentIndex(current)
+				if current.isValid():
+					self.main.treeView.setCurrentIndex(current)
 				if previous.isValid():
 					self.main.model.updateData(previous, self.main.editView.toPlainText(), 2)
 				self.main.treeView.indexChanged.connect(self.main.indexChanged)
@@ -311,7 +312,9 @@ SyntaxHighlighter.all();
 		""" changed index """
 		if self.isEditView:
 			if self.undoStack.index() and self.undoStack.command(self.undoStack.index() - 1).flag == 2:
-				previous = self.undoStack.command(self.undoStack.index() - 1).data[1]
+				cmd = self.undoStack.command(self.undoStack.index() - 1)
+				previous = cmd.data[1]
+				cmd.data = (cmd.data[0], QModelIndex(), cmd.data[2])
 				self.undo()
 			if previous != current:
 				self.editView.document().contentsChanged.disconnect(self.contentsChanged)

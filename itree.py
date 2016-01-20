@@ -56,6 +56,7 @@ class MainWindow(QMainWindow):
 
 		self.restoreGeometry(self.mySettings.value('Geometry'))
 		self.restoreState(self.mySettings.value('State'))
+		self.menuBar().setVisible(self.mySettings.value('Menu/Visible', 'true') == 'true')
 
 		QApplication.setFont(loadFont(self.mySettings, QFont()))
 
@@ -65,6 +66,7 @@ class MainWindow(QMainWindow):
 		self.mySettings.beginGroup('MainWindow')
 		self.mySettings.setValue('Geometry', self.saveGeometry())
 		self.mySettings.setValue('State', self.saveState())
+		self.mySettings.setValue('Menu/Visible', self.menuBar().isVisible())
 		self.mySettings.endGroup()
 		self.mainWidget.saveSettings()
 
