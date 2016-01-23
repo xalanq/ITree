@@ -163,6 +163,11 @@ class IMarkdown(mistune.Markdown):
 		self.renderer = IMarkdownRenderer()
 		super().__init__(renderer=self.renderer, inline=MathInlineLexer(self.renderer), block=MathBlockLexer(), hard_wrap=True)
 
+	def output_block_math(self):
+		return self.renderer.block_math(self.token['text'])
+
+	def output_latex_environment(self):
+		return self.renderer.latex_environment(self.token['name'], self.token['text'])
 
 def main():
 	m = IMarkdown()
