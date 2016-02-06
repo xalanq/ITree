@@ -197,7 +197,10 @@ class MainWindow(QMainWindow):
 	def closeFile(self):
 		""" close a file """
 		if self.maybeSave():
+			self.resRoot = IResNode()
 			self.mainWidget.setRoot(INode())
+			self.mainWidget.setResRoot(self.resRoot)
+			self.resCurrentPath = '/'
 			self.setCurrentName('')
 			self.actionRedo.setEnabled(False)
 			self.actionUndo.setEnabled(False)

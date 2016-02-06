@@ -8,7 +8,7 @@
 
 **License:LGPL V3.0**
 
-## Install
+## 安装
 
 依赖语言:`Python 3`
 
@@ -24,7 +24,7 @@
 * 支持`Tex`(由`MathJax`作为引擎,离线)
 * 支持代码高亮(由`SyntaxHighlighter`作为引擎,离线)
 
-# Version update list
+# 更新历史
 
 ## Alpha 1.4
 
