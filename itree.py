@@ -16,6 +16,7 @@ class MainWindow(QMainWindow):
 	def __init__(self, parent=None):
 		super().__init__(parent)
 
+		self.nodeRoot = INode()
 		self.resRoot = IResNode()
 		self.mySettings = QSettings()
 		self.mainWidget = MainWidget(self)
@@ -197,8 +198,11 @@ class MainWindow(QMainWindow):
 	def closeFile(self):
 		""" close a file """
 		if self.maybeSave():
+			del self.nodeRoot
+			del self.resRoot
+			self.nodeRoot = INode()
 			self.resRoot = IResNode()
-			self.mainWidget.setRoot(INode())
+			self.mainWidget.setRoot(self.nodeRoot)
 			self.mainWidget.setResRoot(self.resRoot)
 			self.resCurrentPath = '/'
 			self.setCurrentName('')
@@ -346,6 +350,9 @@ class MainWindow(QMainWindow):
 			if itf.open(x, y):
 				self.mainWidget.setRoot(x)
 				self.mainWidget.setResRoot(y)
+				del self.nodeRoot
+				del self.resRoot
+				self.nodeRoot = x
 				self.resRoot = y
 				self.resCurrentPath = '/'
 				self.setCurrentName(filename)

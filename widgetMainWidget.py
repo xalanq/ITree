@@ -151,7 +151,7 @@ class MainWidget(QWidget):
 		self.model = TreeViewModel(TreeNode(), self)
 		self.treeView = TreeView(self)
 		self.editView = TextEdit(self)
-		self.webView = WebView(IResNode(), self)
+		self.webView = WebView(IResNode())
 		self.splitter = QSplitter(self)
 		self.undoStack = UndoStack(self)
 		self.rightWidget = QStackedWidget(self)
@@ -213,6 +213,21 @@ class MainWidget(QWidget):
 
 	def loadInternalJavaScript(self):
 		""" load JavaScript """
+		self.htmlHeader += r'''<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/home/iwtwiioi/PycharmProjects/itree/res/katex/katex.min.css">
+<script src="/home/iwtwiioi/PycharmProjects/itree/res/katex/katex.min.js"></script>
+<script src="/home/iwtwiioi/PycharmProjects/itree/res/katex/auto-render.min.js"></script>
+<script type="text/javascript" src="{path}res/SyntaxHighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="{path}res/SyntaxHighlighter/scripts/shAutoloader.js" ></script>
+<link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shThemeDefault.css"/>
+<link type="text/css" rel="stylesheet" href="{path}res/default.css"/>
+</head>
+<body>
+'''.format(path=APP_PATH)
+		"""
 		self.htmlHeader += r'''
 <script type="text/javascript" src="{path}res/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
 <script type="text/javascript">MathJax.Hub.Config({{tex2jax: {{inlineMath: [ ['$','$'], ['\\(','\\)'] ]}}}});</script>
@@ -222,6 +237,7 @@ class MainWidget(QWidget):
 <link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shThemeDefault.css"/>
 <link type="text/css" rel="stylesheet" href="{path}res/default.css"/>
 '''.format(path=APP_PATH)
+		"""
 
 		self.htmlFooter += r'''
 <script type="text/javascript">
@@ -253,7 +269,10 @@ SyntaxHighlighter.autoloader(
 [ 'xml', 'xslt', 'html', 'htm',		rpath('@shBrushXml.js') ]
 );
 SyntaxHighlighter.all();
+renderMathInElement(document.body);
 </script>
+</body>
+</html>
 '''.format(path=APP_PATH)
 
 	def setTree(self):

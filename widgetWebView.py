@@ -111,6 +111,7 @@ class WebView(QWebView):
 		self.page().mainFrame().addToJavaScriptWindowObject('imageRenderer', self.imageRenderer)
 
 	def setHtml(self, html):
+		self.page().deleteLater()
 		self.setPage(QWebPage())
 		self.init()
 		# super().setHtml(html, QUrl.fromLocalFile(QDir.currentPath() + '/')) # fucking '/' takes me 2 hrs
