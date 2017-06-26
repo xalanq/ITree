@@ -4,7 +4,7 @@
 
 **Email:iwtwiioi@gmail.com**
 
-**Latest version:Alpha 1.3**
+**Latest version:Alpha 1.4**
 
 **License:LGPL V3.0**
 
@@ -14,7 +14,7 @@
 
 依赖库:`PySide`, `mistune`
 
-安装`pip install pyside mistune`
+安装`pip3 install pyside mistune`
 
 运行`itree.py`
 
@@ -30,7 +30,7 @@ sudo ln -s /usr/local/lib/libpython3.4m.so.1.0 /usr/lib64/libpython3.4m.so.1.0
 sudo dnf install pyside-tools python3-PyQt4-webkit python3-PyQt4-devel python-qt5
 ```
 然后再
-`pip install pyside mistune`
+`pip3 install pyside mistune`
 
 ## 功能
 
