@@ -10,13 +10,27 @@
 
 ## 安装
 
-依赖语言:`Python 3`
+依赖语言:`Python 3(<=3.4)`
 
 依赖库:`PySide`, `mistune`
 
 安装`pip install pyside mistune`
 
 运行`itree.py`
+
+若Python3.4安装不起pyside，请重新编译Python3.4并加上`--enable-shared`参数编译，即
+```
+./configure --enable-shared
+./make
+sudo make install
+sudo ln -s /usr/local/lib/libpython3.4m.so.1.0 /usr/lib64/libpython3.4m.so.1.0
+```
+然后
+```
+sudo dnf install pyside-tools python3-PyQt4-webkit python3-PyQt4-devel python-qt5
+```
+然后再
+`pip install pyside mistune`
 
 ## 功能
 
