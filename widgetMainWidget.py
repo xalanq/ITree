@@ -226,7 +226,7 @@ class MainWidget(QWidget):
 <link type="text/css" rel="stylesheet" href="{path}res/default.css"/>
 </head>
 <body>
-'''.format(path=APP_PATH)
+'''.format(path=APP_PATH.replace('\\', '/'))
 		"""
 		self.htmlHeader += r'''
 <script type="text/javascript" src="{path}res/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
@@ -236,7 +236,7 @@ class MainWidget(QWidget):
 <link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shCore.css"/>
 <link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shThemeDefault.css"/>
 <link type="text/css" rel="stylesheet" href="{path}res/default.css"/>
-'''.format(path=APP_PATH)
+'''.format(path=APP_PATH.replace('\\', '/'))
 		"""
 
 		self.htmlFooter += r'''
@@ -273,7 +273,7 @@ renderMathInElement(document.body);
 </script>
 </body>
 </html>
-'''.format(path=APP_PATH)
+'''.format(path=APP_PATH.replace('\\', '/'))
 
 	def setTree(self):
 		""" treeView settings """
