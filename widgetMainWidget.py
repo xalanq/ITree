@@ -216,9 +216,9 @@ class MainWidget(QWidget):
 		self.htmlHeader += r'''<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/home/iwtwiioi/PycharmProjects/itree/res/katex/katex.min.css">
-<script src="/home/iwtwiioi/PycharmProjects/itree/res/katex/katex.min.js"></script>
-<script src="/home/iwtwiioi/PycharmProjects/itree/res/katex/auto-render.min.js"></script>
+<link rel="stylesheet" href="{path}res/katex/katex.min.css">
+<script src="{path}res/katex/katex.min.js"></script>
+<script src="{path}res/katex/auto-render.min.js"></script>
 <script type="text/javascript" src="{path}res/SyntaxHighlighter/scripts/shCore.js"></script>
 <script type="text/javascript" src="{path}res/SyntaxHighlighter/scripts/shAutoloader.js" ></script>
 <link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shCore.css"/>
