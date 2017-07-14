@@ -19,4 +19,4 @@ APP_NAME = 'ITree'
 VERSION = 'Alpha 1.2'
 AUTHOR = 'iwtwiioi'
 EMAIL = 'iwtwiioi@gmail.com'
-APP_PATH = os.path.dirname(os.path.abspath(sys.argv[0])) + '/'
+APP_PATH = os.path.dirname(os.path.abspath(sys.argv[0])) + os.path.sep

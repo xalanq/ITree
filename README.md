@@ -14,6 +14,8 @@
 
 依赖库:`PySide`, `mistune`
 
+### 对于Linux的发行版
+
 安装`pip3 install pyside mistune`
 
 运行`itree.py`
@@ -31,6 +33,18 @@ sudo dnf install pyside-tools python3-PyQt4-webkit python3-PyQt4-devel python-qt
 ```
 然后再
 `pip3 install pyside mistune`
+
+### 对于Windows
+
+安装`Python 3.4`
+
+运行`pip install mistune`和`pip install pyside --only-binary :all:`
+
+## Q & A
+
+### 1. 图片显示不正常
+
+打开`imartdown.py`,搜索`assignTo`,替换`return`内容为注释内容
 
 ## 功能
 

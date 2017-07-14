@@ -144,6 +144,8 @@ class IMarkdownRenderer(mistune.Renderer):
 		cmd += ' height="{}"'.format(height) if height else ''
 		# print(cmd)
 		# return '<img {} onerror="alert(imageRenderer.processing(this));">'.format(cmd)
+                # if compile QtWebKit with Qt5, use assignTo; Otherwise use assignToHTMLImageElement
+		# return '<img {} onerror="imageRenderer.processing(this); imageRenderer.picture.assignToHTMLImageElement(this);">'.format(cmd)
 		return '<img {} onerror="imageRenderer.processing(this); imageRenderer.picture.assignTo(this);">'.format(cmd)
 
 	# Pass math through unaltered - mathjax does the rendering in the browser
