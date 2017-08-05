@@ -71,7 +71,7 @@ swig -python -c++ itreefile.i
 ## 功能
 
 * 主体用`markdown`作为编辑语言(由`mistune`作为引擎)
-* 支持`Tex`(由`MathJax`作为引擎,离线)
+* 支持`Tex`(由`KaTex`作为引擎,离线)
 * 支持代码高亮(由`SyntaxHighlighter`作为引擎,离线)
 
 # 更新历史
