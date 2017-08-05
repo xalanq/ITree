@@ -16,7 +16,18 @@
 
 ### 对于Linux的发行版
 
-安装`pip3 install pyside mistune`
+安装`swig`
+
+然后终端里，进入软件目录的`filecode`文件夹，输入
+```
+swig -python -c++ itreefile.i
+g++ -fPIC -Wall -Wextra -shared itreefile.cpp itreefile_wrap.cxx -o _itreefile.so -I/usr/include/python3.4m/
+```
+(将上边`/usr/include/python3.4m/`改为你自己的`python`库文件路径)
+
+编译完以后将`itreefile.py`和`_itreefile.so`复制到软件主目录
+
+然后`pip3 install pyside mistune`
 
 运行`itree.py`
 
@@ -27,7 +38,7 @@
 sudo make install
 sudo ln -s /usr/local/lib/libpython3.4m.so.1.0 /usr/lib64/libpython3.4m.so.1.0
 ```
-然后
+然后(对于Fedora)
 ```
 sudo dnf install pyside-tools python3-PyQt4-webkit python3-PyQt4-devel python-qt5
 ```
@@ -39,6 +50,17 @@ sudo dnf install pyside-tools python3-PyQt4-webkit python3-PyQt4-devel python-qt
 安装`Python 3.4`
 
 运行`pip install mistune`和`pip install pyside --only-binary :all:`
+
+安装`swig`
+
+在命令行里，进入软件目录的`filecode`文件夹，输入
+```
+swig -python -c++ itreefile.i
+```
+
+用IDE建立新工程，编译动态库，将`itreefile.cpp`,`itreefile.h`,`itreefile_wrap.cxx`加入工程里并编译。
+
+将编译好的dll文件改名为`_itreefile.pyd`，然后与`filecode`文件夹里的`itreefile.py`一起复制到软件主目录
 
 ## Q & A
 

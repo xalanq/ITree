@@ -16,7 +16,7 @@ from imarkdown import *
 import os, sys
 
 APP_NAME = 'ITree'
-VERSION = 'Alpha 1.2'
+VERSION = 'Alpha 1.4'
 AUTHOR = 'iwtwiioi'
 EMAIL = 'iwtwiioi@gmail.com'
 APP_PATH = os.path.dirname(os.path.abspath(sys.argv[0])) + os.path.sep
