@@ -68,6 +68,10 @@ swig -python -c++ itreefile.i
 
 打开`imartdown.py`,搜索`assignTo`,替换`return`内容为注释内容
 
+### 2. Windows下tex公式显示下标有问题，变成了上标
+
+目前不知道什么回事...
+
 ## 功能
 
 * 主体用`markdown`作为编辑语言(由`mistune`作为引擎)
