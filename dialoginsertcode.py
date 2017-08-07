@@ -65,6 +65,7 @@ class DialogInsertCode(QDialog, Ui_DialogInsertCode):
 				self.lineEditTitle.setText(os.path.basename(name))
 			else:
 				QMessageBox.warning(self, self.tr('Error'), self.tr('Cannot open file {}'.format(name)))
+		self.textEdit.setFocus();
 
 	def keyPressEvent(self, event):
 		if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:

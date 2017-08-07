@@ -2,7 +2,7 @@
 #     itree - LGPL v3.0
 #     mistune - BSD
 #     PySide - LGPL v3.0
-#     MathJax - Apache
+#     KaTexX - MIT
 #     SyntaxHighlighter - LGPL v3.0
 # see the file "LICENSE"
 
@@ -17,6 +17,7 @@ import os, sys
 
 APP_NAME = 'ITree'
 VERSION = 'Alpha 1.4'
-AUTHOR = 'iwtwiioi'
-EMAIL = 'iwtwiioi@gmail.com'
+AUTHOR = 'xalanq(iwtwiioi)'
+EMAIL = 'xalanq@gmail.com(iwtwiioi@gmail.com)'
+PROJECTHOME = 'github.com/iwtwiioi/ITree'
 APP_PATH = os.path.dirname(os.path.abspath(sys.argv[0])) + os.path.sep

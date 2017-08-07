@@ -28,11 +28,12 @@ class ListViewFile(NoRectangleListWidget):
 		self.updateView()
 
 	def appearance(self):
-		self.setContextMenuPolicy(Qt.CustomContextMenu)
+		pass
+		# self.setContextMenuPolicy(Qt.CustomContextMenu)
 		# self.setSelectionMode(QListView.ExtendedSelection)
 
 	def connections(self):
-		self.customContextMenuRequested.connect(self.clickedMenu)
+		# self.customContextMenuRequested.connect(self.clickedMenu)
 		self.itemDoubleClicked.connect(self.actionEnter)
 
 	def shortcuts(self):
@@ -93,25 +94,25 @@ class ListViewFile(NoRectangleListWidget):
 		x.setEnabled(isEnable)
 		return x
 
-	def menuFile(self):
+	def menuFile(self, indexes):
 		menu = QMenu(self)
-		menu.addAction(self.makeAction(self.tr('Copy'), self.actionCopy, QKeySequence.Copy))
-		menu.addAction(self.makeAction(self.tr('Cut'), self.actionCut, QKeySequence.Cut))
-		menu.addAction(self.makeAction(self.tr('Paste'), self.actionPaste, QKeySequence.Paste, self.pasteBin != None))
-		menu.addAction(self.makeAction(self.tr('Rename'), self.actionRename, 'F2'))
-		menu.addAction(self.makeAction(self.tr('Delete'), self.actionDelete, QKeySequence.Delete))
-		menu.addSeparator()
+		if indexes:
+			menu.addAction(self.makeAction(self.tr('Copy'), self.actionCopy, QKeySequence.Copy))
+			menu.addAction(self.makeAction(self.tr('Cut'), self.actionCut, QKeySequence.Cut))
+			menu.addAction(self.makeAction(self.tr('Paste'), self.actionPaste, QKeySequence.Paste, self.pasteBin != None))
+			menu.addAction(self.makeAction(self.tr('Rename'), self.actionRename, 'F2'))
+			menu.addAction(self.makeAction(self.tr('Delete'), self.actionDelete, QKeySequence.Delete))
+			menu.addSeparator()
 		menu.addAction(self.makeAction(self.tr('New Folder'), self.actionNewFolder, QKeySequence.New))
 		menu.addAction(self.makeAction(self.tr('Upload'), self.actionUpload, QKeySequence.Open))
 		menu.addAction(self.makeAction(self.tr('Download'), self.actionDownload, QKeySequence.Save))
 		return menu
 
-	def clickedMenu(self, position):
+	def clickedMenu(self):
 		""" clicked menu """
 		indexes = self.selectedIndexes()
-		if indexes:
-			menu = self.menuFile()
-			menu.exec_(QCursor.pos())
+		menu = self.menuFile(indexes)
+		menu.exec_(QCursor.pos())
 
 	def getSelectedPath(self):
 		index = self.currentItem()
@@ -200,21 +201,22 @@ class ListViewFile(NoRectangleListWidget):
 
 	def actionRename(self):
 		node = self.getSelectedNode()
-		name, ok = QInputDialog.getText(None, self.tr("Rename"), self.tr('Input a string'), QLineEdit.Normal, node.name)
-		if ok and node.name != name:
-			if not IResNode.isNameVaild(name):
-				QMessageBox.warning(self, self.tr('Error'), self.tr('name is invalid'))
-				return
-			if self.currentNode.findName(name) != -1:
-				QMessageBox.warning(self, self.tr('Error'), name + self.tr(' has been existed!'))
-				return
-			node.name = name
-			self.takeItem(self.currentRow())
-			row, info = self.findInfo(self.currentNode, name)
-			self.insertItem(row, self.makeItem(info.name, info.isFile))
-			self.setCurrentRow(row)
-			self.pasteBin = None
-			self.isModified = True
+		if node:
+			name, ok = QInputDialog.getText(None, self.tr("Rename"), self.tr('Input a string'), QLineEdit.Normal, node.name)
+			if ok and node.name != name:
+				if not IResNode.isNameVaild(name):
+					QMessageBox.warning(self, self.tr('Error'), self.tr('name is invalid'))
+					return
+				if self.currentNode.findName(name) != -1:
+					QMessageBox.warning(self, self.tr('Error'), name + self.tr(' has been existed!'))
+					return
+				node.name = name
+				self.takeItem(self.currentRow())
+				row, info = self.findInfo(self.currentNode, name)
+				self.insertItem(row, self.makeItem(info.name, info.isFile))
+				self.setCurrentRow(row)
+				self.pasteBin = None
+				self.isModified = True
 
 	def actionDelete(self):
 		node = self.getSelectedNode()
@@ -265,6 +267,11 @@ class ListViewFile(NoRectangleListWidget):
 			self.path = '/'.join(self.path.split('/')[:-2]) + '/'
 			self.pathChanged.emit(self.path)
 
+	def mousePressEvent(self, event):
+		if event.button() == Qt.RightButton:
+			self.clickedMenu()
+		else:
+			super().mousePressEvent(event)
 
 class DialogInsertFile(QDialog):
 

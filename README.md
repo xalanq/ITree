@@ -1,8 +1,8 @@
 # ITree
 
-**Author:iwtwiioi**
+**Author:xalanq(iwtwiioi)**
 
-**Email:iwtwiioi@gmail.com**
+**Email:xalanq@gmail.com(iwtwiioi@gmail.com)**
 
 **Latest version:Alpha 1.4**
 
@@ -80,9 +80,13 @@ swig -python -c++ itreefile.i
 
 # 更新历史
 
-## Alpha 1.4
+## Alpha 1.4 - 08/07/2017
 
+* 添加捐赠
 * 修复markdown公式问题
+* 修复插入代码点击“打开”后ctrl+enter不能插入
+* 修复文件管理器空白区域不能右键
+* 修复Windows下不能进行第二次保存
 
 ## Alpha 1.3 - 01/19/2016
 

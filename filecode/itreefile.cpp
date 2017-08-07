@@ -514,9 +514,23 @@ bool ITreeFile::write(const INode &node_root, const IResNode &res_root) const {
 	}
 
 	fclose(fio);
-	bool ret=moveFile(writeName, name);
+	bool ret;
+	string tmpName="";
+	if(isExist(name)) {
+		tmpName=writeName+"~";
+		for(; isExist(tmpName); tmpName+="~");
+		ret=moveFile(name, tmpName);
+		if(!ret) {
+			return 0;
+		}
+	}
+	ret=moveFile(writeName, name);
 	if(!ret) {
 		remove(writeName.c_str());
+	    for(; tmpName!="" && moveFile(tmpName, name)==0; );
+	}
+	if (tmpName!="") {
+		remove(tmpName.c_str());
 	}
 	return ret;
 }

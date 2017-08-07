@@ -167,6 +167,8 @@ class MainWindow(QMainWindow):
 
 		self.setMenuBar(menuBar)
 
+		self.setWindowIcon(QIcon('icon.ico'))
+
 	def setCenter(self):
 		if self.mySettings.value('MainWindow/Geometry') == None:
 			self.adjustSize()
@@ -297,8 +299,16 @@ class MainWindow(QMainWindow):
 		QMessageBox.about(self, self.tr("About ITree"),
 				r"""<center><b> ITree {} </b></center>
 					<p>CopyRight &copy; 2015-2017 by {}.</p>
-					<p>Contact me : {} </p>
-					<p>Lisence:<a href='./LICENSE'>LGPL v3.0</a>""".format(VERSION, AUTHOR, EMAIL))
+					<p>Email:{}</p>
+					<p>Project home:<a href="https://{}">{}</a></p>
+					<p>Lisence:<a href='./LICENSE'>LGPL v3.0</a></p>
+					<p>
+					<center><b><font color="red">Donate Me</font></b></center>
+					<center>支付宝(Alipay):whiteeaglealan@gmail.com</center>
+					<center><img src="donate-alipay.png" height="300" width="300"/></center>
+					<center>微信(WeChat):iwtwiioi</center>
+					<center><img src="donate-wechat.png" height="300" width="300"/></center>
+					</p>""".format(VERSION, AUTHOR, EMAIL, PROJECTHOME, PROJECTHOME))
 
 	def tutorial(self):
 		language = self.mySettings.value('MainWindow/Language', 'default')
