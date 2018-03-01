@@ -8,6 +8,12 @@
 
 **License:LGPL V3.0**
 
+## 下载
+
+移步到[发布页](https://github.com/xalanq/ITree/releases)
+
+[Windows 64位](https://github.com/xalanq/ITree/releases/download/Alpha1.5/ITree_Alpha_1.5_win_x86-64.zip)
+
 ## 安装
 
 依赖语言:`Python 3`
