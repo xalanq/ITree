@@ -298,7 +298,7 @@ class MainWindow(QMainWindow):
 		""" about application """
 		QMessageBox.about(self, self.tr("About ITree"),
 				r"""<center><b> ITree {} </b></center>
-					<p>CopyRight &copy; 2015-2017 by {}.</p>
+					<p>CopyRight &copy; 2015-2018 by {}.</p>
 					<p>Email:{}</p>
 					<p>Project home:<a href="https://{}">{}</a></p>
 					<p>Lisence:<a href='./LICENSE'>LGPL v3.0</a></p>

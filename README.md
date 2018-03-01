@@ -4,15 +4,17 @@
 
 **Email:xalanq@gmail.com(iwtwiioi@gmail.com)**
 
-**Latest version:Alpha 1.4**
+**Latest version:Alpha 1.5**
 
 **License:LGPL V3.0**
 
 ## 安装
 
-依赖语言:`Python 3(<=3.4)`
+依赖语言:`Python 3`
 
 依赖库:`PySide`, `mistune`
+
+`PySide`的`Python36`版本可以在[这下载](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
 
 ### 对于Linux的发行版
 
@@ -72,13 +74,19 @@ swig -python -c++ itreefile.i
 
 目前不知道什么回事...
 
+不过将`Katex`换成`MathJax`后得到解决.
+
 ## 功能
 
 * 主体用`markdown`作为编辑语言(由`mistune`作为引擎)
-* 支持`Tex`(由`KaTex`作为引擎,离线)
+* 支持`Tex`(由`KaTex`或`MathJax`作为引擎,离线)
 * 支持代码高亮(由`SyntaxHighlighter`作为引擎,离线)
 
 # 更新历史
+
+## Alpha 1.5 - 03/01/2018
+
+* 将`Katex`换成`MathJax`
 
 ## Alpha 1.4 - 08/07/2017
 
