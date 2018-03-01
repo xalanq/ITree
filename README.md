@@ -8,11 +8,11 @@
 
 **License:LGPL V3.0**
 
-## 下载
+## 下载二进制版本
 
-移步到[发布页](https://github.com/xalanq/ITree/releases)
+[Windows 64位下载](https://github.com/xalanq/ITree/releases/download/Alpha1.5/ITree_Alpha_1.5_win_x86-64.zip)
 
-[Windows 64位](https://github.com/xalanq/ITree/releases/download/Alpha1.5/ITree_Alpha_1.5_win_x86-64.zip)
+移步到[发布页](https://github.com/xalanq/ITree/releases)查看更多历史版本。
 
 ## 安装
 
