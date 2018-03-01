@@ -213,6 +213,7 @@ class MainWidget(QWidget):
 
 	def loadInternalJavaScript(self):
 		""" load JavaScript """
+		"""
 		self.htmlHeader += r'''<!DOCTYPE html>
 <html>
 <head>
@@ -228,16 +229,17 @@ class MainWidget(QWidget):
 <body>
 '''.format(path=APP_PATH.replace('\\', '/'))
 		"""
-		self.htmlHeader += r'''
-<script type="text/javascript" src="{path}res/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
-<script type="text/javascript">MathJax.Hub.Config({{tex2jax: {{inlineMath: [ ['$','$'], ['\\(','\\)'] ]}}}});</script>
+		self.htmlHeader += r'''<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="{path}res/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">MathJax.Hub.Config({{"HTML-CSS": {{scale: 180}}, tex2jax: {{inlineMath: [ ['$','$'], ['\\(','\\)'] ]}}}});</script>
 <script type="text/javascript" src="{path}res/SyntaxHighlighter/scripts/shCore.js"></script>
 <script type="text/javascript" src="{path}res/SyntaxHighlighter/scripts/shAutoloader.js" ></script>
 <link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shCore.css"/>
 <link type="text/css" rel="stylesheet" href="{path}res/SyntaxHighlighter/styles/shThemeDefault.css"/>
 <link type="text/css" rel="stylesheet" href="{path}res/default.css"/>
 '''.format(path=APP_PATH.replace('\\', '/'))
-		"""
 
 		self.htmlFooter += r'''
 <script type="text/javascript">

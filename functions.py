@@ -3,6 +3,7 @@
 #     mistune - BSD
 #     PySide - LGPL v3.0
 #     KaTexX - MIT
+#     MathJax -
 #     SyntaxHighlighter - LGPL v3.0
 # see the file "LICENSE"
 
@@ -16,8 +17,8 @@ from imarkdown import *
 import os, sys
 
 APP_NAME = 'ITree'
-VERSION = 'Alpha 1.4'
+VERSION = 'Alpha 1.5'
 AUTHOR = 'xalanq(iwtwiioi)'
 EMAIL = 'xalanq@gmail.com(iwtwiioi@gmail.com)'
-PROJECTHOME = 'github.com/iwtwiioi/ITree'
+PROJECTHOME = 'github.com/xalanq/ITree'
 APP_PATH = os.path.dirname(os.path.abspath(sys.argv[0])) + os.path.sep
