@@ -16,6 +16,8 @@
 
 `PySide`的`Python36`版本可以在[这下载](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
 
+使用前先将`./res/MathJax.zip`解压到该目录。
+
 ### 对于Linux的发行版
 
 安装`swig`
