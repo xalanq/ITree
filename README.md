@@ -1,12 +1,14 @@
 # ITree
 
-**Author:xalanq(iwtwiioi)**
+**Author: xalanq(iwtwiioi)**
 
-**Email:xalanq@gmail.com(iwtwiioi@gmail.com)**
+**Email: xalanq@gmail.com(iwtwiioi@gmail.com)**
 
-**Latest version:Alpha 1.5**
+**Latest version: Alpha 1.5**
 
-**License:LGPL V3.0**
+**License: LGPL V3.0**
+
+**软件介绍及界面请看**: [我的博客](http://blog.xalanq.com/itree/)
 
 ## 下载二进制版本
 
